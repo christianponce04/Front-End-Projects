@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>assessment</title>
 </head>
 <body>
 
     <div id="myModal" class="modal">
   
-        <div class="modal-content">
+        <div class="modal_content">
           <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+            
+          <div class="modal_info">
+            <h2>How can we help you today?</h2>
+                <form action="#" method="POST">
+                    <input type="text"  placeholder="Enter a keyword to start searching" name="submit">
+                    <button type="submit"></button>
+                </form>
+          </div>
         </div>
 
     </div>
@@ -40,14 +48,15 @@
         </div>
     </header>
 
+
     <div id="nav_area">
         <div class="wrapper">
             <nav>
                 <ul>
-                   <li><a href="#">Our Properties</a>
-                    <ul class="properties">
-                        <li>
+                      
+                   <li><a href="#">Our Properties <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
 
+                    <div class="custom_nav properties"  id="myDropdown">
                             <h2>Our Properties</h2>
                             <a href="#">Learn More</a>
 
@@ -95,14 +104,106 @@
                                   
                                 </section>
                             </div>
-
-                        </li>
-                    </ul>
+                    </div>
                 </li>
-                   <li><a href="#">SDA</a></li>
-                   <li><a href="#">About Us</a></li>
-                   <li><a href="#">Resource Hub</a></li>
-                   <li><a href="#">Media & News</a></li>
+                   <li><a href="#">SDA <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
+
+                    <div class="custom_nav sda_dropdown">
+                        <div class="dropdown_content sda_dropdown_con">
+                            <section>
+                                <h2>SDA</h2>
+                                <ul>
+                                    <li><a href="">About SDA</a></li>
+                                    <li><a href="">How to Apply</a></li>
+                                    <li><a href="">Eligibility Check</a></li>
+                                    <li><a href="">FAQs for Investors, Builders & Developers</a></li>
+                                </ul>
+                            </section>
+                    
+                            <section>
+                                <figure><img src="assets/images/sda-dropdown-img.jpg" alt=""></figure>
+                               <h3>How to Apply</h3>
+                               <p>Vehicula mattis fermentum in ullamcorper eleifend. Interdum.</p>
+                            </section>
+                        </div>
+
+                    </div>
+                
+
+                  </li>
+
+                   <li><a href="#">About Us <q onclick="myFunction()" class="arrrow_down fa fa-chevron-down"></q></a>
+
+                    <div class="custom_nav about_dropdown">
+                        <div class="dropdown_content about_dropdown_con">
+                            <section>
+                                <h2>ABout MARAMEO</h2>
+                                <ul>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Governance</a></li>
+                                    <li><a href="">The Team</a></li>
+                                    <li><a href="">The Board</a></li>
+                                    <li><a href="#">Why Us</a></li>
+                                </ul>
+                            </section>
+                    
+                            <section>
+                                <figure><img src="assets/images/about-dropdown-img.jpg" alt=""></figure>
+                               <h3>Why Us?</h3>
+                               <p>Vehicula mattis fermentum in ullamcorper eleifend. Interdum.</p>
+                            </section>
+                        </div>
+
+                    </div>
+
+                
+                </li>
+                   <li><a href="#">Resource Hub <q onclick="myFunction()" class="arrrow_down fa fa-chevron-down"></q></a>
+                    
+                    
+                    <div class="custom_nav resource_dropdown">
+                        <div class="dropdown_content resource_dropdown_con">
+                            <section>
+                                <h2>Resource Hub</h2>
+                                <ul>
+                                    <li><a href="">Resources</a></li>
+                                    <li><a href="">Events</a></li>
+                                </ul>
+                            </section>
+                    
+                            <section>
+                                <figure><img src="assets/images/resource-dropdown-img.jpg" alt=""></figure>
+                               <h3>Events</h3>
+                               <p>Nulla lectus fringilla felis varius consequat rhoncus enim.</p>
+                            </section>
+                        </div>
+
+                    </div>
+
+                
+                </li>
+                   <li><a href="#">Media & News <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
+                    
+                    <div class="custom_nav tenant_dropdown">
+                        <div class="dropdown_content tenant_dropdown_con">
+                            <section>
+                                <h2>MEdia and news</h2>
+                                <ul>
+                                    <li><a href="">All</a></li>
+                                    <li><a href="">Tenant Stories</a></li>
+                                    <li><a href="">Blog</a></li>
+                                    <li><a href="">News</a></li>
+                                </ul>
+                            </section>
+                    
+                            <section>
+                                <figure><img src="assets/images/tenant-dropdown-img.jpg" alt=""></figure>
+                               <h3>Tenant Stories</h3>
+                               <p>Nulla lectus fringilla felis varius consequat rhoncus enim.</p>
+                            </section>
+                        </div>
+
+                </li>
                 </ul>
             </nav>
         </div>
@@ -417,9 +518,9 @@
         </div>
 
     </footer>
-
 </body>
 
 <script src="js/script.js"></script>
 
 </html>
+
