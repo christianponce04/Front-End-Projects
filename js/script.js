@@ -1,25 +1,15 @@
-const nav = document.getElementById('nav_area');
-const mainLogo = document.getElementById('main_logo');
-const header = mainLogo.parentNode;
+// // hamburger
 
+document.getElementById('hamburger').addEventListener('click', function() {
+  const navMenu = document.getElementById('nav_menu');
+  navMenu.classList.toggle('active');
+  this.classList.toggle('active'); 
+});
+
+// // modal search
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
-
-function swap() {
-  if (window.innerWidth <= 1000) {
-    header.insertBefore(nav,header);
-      
-    }
-    else{
-        header.insertBefore(nav,mainLogo);
-    }
-}
-
-swap();
-
-window.addEventListener('resize', swap);
-
 
 btn.onclick = function() { modal.style.display = "block"; }
 span.onclick = function() { modal.style.display = "none"; }
@@ -31,35 +21,46 @@ window.onclick = function(event) {
 }
 
 
-// dropdown
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+// // dropdown
+ function toggleDropdown(dropdownId) {
 
-// Close the dropdown if the user clicks outside of it
+   var dropdowns = document.getElementsByClassName("custom_nav");
+   for (var i = 0; i < dropdowns.length; i++) {
+     if (dropdowns[i].id !== dropdownId) {
+       dropdowns[i].classList.remove("show");
+     }
+   }
+
+
+   document.getElementById(dropdownId).classList.toggle("show");
+ }
+
+
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+    var dropdowns = document.getElementsByClassName("custom_nav");
+    for (var i = 0; i < dropdowns.length; i++) {
+      if (dropdowns[i].classList.contains('show')) {
+        dropdowns[i].classList.remove('show');
       }
     }
   }
 }
 
-// Select all elements by the class name
+// // arrow dropdown icon changing
 const arrrow_down = document.getElementsByClassName('arrrow_down');
 
-// Loop through each div and add event listeners
 for (let i = 0; i < arrrow_down.length; i++) {
     arrrow_down[i].addEventListener('click', function() {
-        // Toggle the 'clicked' class for the clicked div
+        
+        for (let j = 0; j < arrrow_down.length; j++) {
+            if (j !== i) {
+                arrrow_down[j].classList.remove('clicked');
+            }
+        }
+    
         arrrow_down[i].classList.toggle('clicked');
     });
 }
+
 

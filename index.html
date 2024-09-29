@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>assessment</title>
 </head>
 <body>
 
+
+    <!-- modal for search -->
     <div id="myModal" class="modal">
-  
         <div class="modal_content">
           <span class="close">&times;</span>
             
@@ -22,11 +24,11 @@
                 </form>
           </div>
         </div>
-
     </div>
 
     
-    <header>
+    <!-- header -->
+    <header id="header">
         <div class="wrapper">
             <div class="header_container">
 
@@ -35,7 +37,7 @@
                 </div>
                 
                 <div class="header_content">
-                    <div class="header_search">
+                    <div class="header_search" id="header_search">
                         <button type="submit" id="myBtn"></button>
                     </div>
     
@@ -47,16 +49,23 @@
             </div>
         </div>
     </header>
-
-
+      
+    <!-- nav area -->
     <div id="nav_area">
         <div class="wrapper">
             <nav>
-                <ul>
-                      
-                   <li><a href="#">Our Properties <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
 
-                    <div class="custom_nav properties"  id="myDropdown">
+                <div class="hamburger" id="hamburger"> 
+                    <div class="hamburger_line"></div>
+                    <div class="hamburger_line"></div>
+                    <div class="hamburger_line"></div>
+                </div>
+
+                <ul id="nav_menu">
+                      
+                   <li><a href="#">Our Properties <q onclick="toggleDropdown('dropdown1')"  class="dropbtn arrrow_down fa fa-chevron-down"></q></a>
+
+                    <div class="custom_nav properties"  id="dropdown1" >
                             <h2>Our Properties</h2>
                             <a href="#">Learn More</a>
 
@@ -106,9 +115,9 @@
                             </div>
                     </div>
                 </li>
-                   <li><a href="#">SDA <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
+                   <li><a href="#">SDA <q onclick="toggleDropdown('dropdown2')"  class="dropbtn arrrow_down fa fa-chevron-down"></q></a>
 
-                    <div class="custom_nav sda_dropdown">
+                    <div class="custom_nav sda_dropdown" id="dropdown2">
                         <div class="dropdown_content sda_dropdown_con">
                             <section>
                                 <h2>SDA</h2>
@@ -132,9 +141,9 @@
 
                   </li>
 
-                   <li><a href="#">About Us <q onclick="myFunction()" class="arrrow_down fa fa-chevron-down"></q></a>
+                   <li><a href="#">About Us <q onclick="toggleDropdown('dropdown3')" class="dropbtn arrrow_down fa fa-chevron-down"></q></a>
 
-                    <div class="custom_nav about_dropdown">
+                    <div class="custom_nav about_dropdown" id="dropdown3">
                         <div class="dropdown_content about_dropdown_con">
                             <section>
                                 <h2>ABout MARAMEO</h2>
@@ -158,10 +167,10 @@
 
                 
                 </li>
-                   <li><a href="#">Resource Hub <q onclick="myFunction()" class="arrrow_down fa fa-chevron-down"></q></a>
+                   <li><a href="#">Resource Hub <q onclick="toggleDropdown('dropdown4')" class="dropbtn arrrow_down fa fa-chevron-down"></q></a>
                     
                     
-                    <div class="custom_nav resource_dropdown">
+                    <div class="custom_nav resource_dropdown" id="dropdown4">
                         <div class="dropdown_content resource_dropdown_con">
                             <section>
                                 <h2>Resource Hub</h2>
@@ -182,9 +191,9 @@
 
                 
                 </li>
-                   <li><a href="#">Media & News <q onclick="myFunction()"  class="arrrow_down fa fa-chevron-down"></q></a>
+                   <li><a href="#">Media & News <q onclick="toggleDropdown('dropdown5')"  class="dropbtn arrrow_down fa fa-chevron-down"></q></a>
                     
-                    <div class="custom_nav tenant_dropdown">
+                    <div class="custom_nav tenant_dropdown" id="dropdown5">
                         <div class="dropdown_content tenant_dropdown_con">
                             <section>
                                 <h2>MEdia and news</h2>
@@ -205,17 +214,19 @@
 
                 </li>
                 </ul>
+            
             </nav>
+
+
         </div>
     </div>
 
+    <!-- hero section -->
     <div id="hero">
         <div class="wrapper">
             <div class="hero_container">
 
-                <div class="hero_img">
-                    <figure><img src="assets/images/hero-img.jpg" alt=""></figure>
-                </div>
+              
 
                 <div class="hero_info">
                     <h2><span>Life-changing </span> living </h2>
@@ -228,10 +239,16 @@
                         <a href="#" class="btn">Find a property</a>
                     </div>
                 </div>
+
+                <div class="hero_img">
+                    <figure><img src="assets/images/hero-img.jpg" alt=""></figure>
+                </div>
+
             </div>
         </div>
     </div>
 
+    <!-- about section -->
     <div id="about_section">
         <div class="wrapper">
             <div class="about_container">
@@ -249,6 +266,7 @@
         </div>
     </div>
 
+    <!-- featured section -->
     <div id="featured_section">
         <div class="wrapper">
 
@@ -269,6 +287,7 @@
         </div>
     </div>
    
+    <!-- properties section -->
     <div id="properties_section">
         <div class="wrapper">
             <div class="properties_container">
@@ -291,10 +310,15 @@
                 </div>
               </div>
 
+              <div class="state_map">
+                <figure><img src="assets/images/state-map.png" alt=""></figure>
+              </div>
+
             </div>
         </div>
     </div>
 
+    <!-- specialist-section -->
     <div id="specialist_section">
         <div class="wrapper">
             <div class="specialist_container">
@@ -336,9 +360,9 @@
         </div>
     </div>
 
+    <!-- difference section -->
     <div id="difference_section">
-        <figure><img src="assets/images/difference-img.jpg" alt=""></figure>
-
+     
         <div class="wrapper">
             <div class="difference_container">
 
@@ -377,8 +401,13 @@
                 </div>
             </div>
         </div>
+
+        <figure><img src="assets/images/difference-img.jpg" alt=""></figure>
+
+
     </div>
 
+<!-- news section -->
     <div id="news_section">
         <div class="wrapper">
             <div class="news_container">
@@ -420,11 +449,12 @@
         </div>
     </div>
 
+    <!-- contact section -->
     <div id="contact_section">
         <div class="wrapper">
             <div class="contact_container">
 
-                <figure><img src="assets/images/contact-img.jpg" alt=""></figure>
+             
                 
                 <div class="contact_info">
                     <h2>Contact <span>Marameo</span> today</h2>
@@ -434,10 +464,14 @@
                         <a href="tel:1300156555" class="btn">Call us 1300 156 555</a> </a>
                     </div>
                 </div>
+
+                <figure><img src="assets/images/contact-img.jpg" alt=""></figure>
+
             </div>
         </div>
     </div>
 
+    <!-- footer section -->
     <footer>
         <div class="wrapper">
             <div class="footer_container">
@@ -445,7 +479,7 @@
             <div class="footer_top_con">
                 
                 <div class="footer_left_con">
-                    <div class="footer_logo">
+                    <div class="footer_logo" id="footer_logo">
                         <a href="#"><figure><img src="assets/images/footer-logo.png" alt=""></figure></a>
                     </div>
                     <ul>
@@ -460,7 +494,7 @@
                             <h2>QUICK LINKS</h2>
                             <ul>
                                 <li><a href="#">Our Properties</a></li>
-                                <li><a href="#">Specialist Disability Accommodation</a></li>
+                                <li><a href="#" class="active">Specialist Disability Accommodation</a></li>
                                 <li><a href="#">About Liverty</a></li>
                                 <li><a href="#">Resources</a></li>
                                 <li><a href="#">All Media & News</a></li>
@@ -477,7 +511,7 @@
                     </div>
 
                     <div class="footer_right_info2">
-                        <div class="registered">
+                        <div class="registered" id="registered">
                             <figure><img src="assets/images/footer-img.png" alt=""></figure>
                        
                         </div>
@@ -519,8 +553,34 @@
 
     </footer>
 </body>
-
 <script src="js/script.js"></script>
+<script>
+    // swapping
+const nav = document.getElementById('nav_area');
+const mainLogo = document.getElementById('main_logo');
+const header = mainLogo.parentNode;
 
+function swap() {
+  if (window.innerWidth <= 800) {
+      header.insertBefore(nav,mainLogo);
+    }
+
+    else if(window.innerWidth <= 1024) {
+      header.insertBefore(nav,header);
+    }
+
+    else{
+        header.insertBefore(nav,mainLogo);
+    }
+}
+
+swap();
+
+window.addEventListener('resize', swap);
+
+</script>
 </html>
+
+
+
 
