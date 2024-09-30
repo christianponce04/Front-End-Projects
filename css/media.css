@@ -13,14 +13,17 @@
 
 @media only screen and (max-width: 1200px) {
     nav ul li a { font-size: 15px; margin: 0 22px; }
+    nav ul li:hover::before { width: 106%; }
 }
 
 @media only screen and (max-width: 1090px) {
 
     .header_content { max-width: 176px; }
 
-    nav ul li a { margin: 0 19px; } }
+    nav ul li a { margin: 0 19px; } 
     #nav_area { left: -2%; }
+}
+
 
 
 @media only screen and (max-width: 1024px) {
@@ -28,15 +31,16 @@
 
     header{position: static;padding: 40px 25px;background: #F1EAE6;}
 
-    #nav_area { position: relative; transform: translate(0); background: #F1EAE6;left: unset;top: unset;z-index: 2;padding: 20px;text-align: center;}
-    nav ul li { display: block; margin-bottom: 15px;}
+    #nav_area { position: relative; transform: translate(0); background: #F1EAE6;left: unset;top: unset;z-index: 2;padding: 20px;text-align: center;pointer-events: auto;}
+    nav ul li { display: block; margin-bottom: 10px;line-height: 45px;}
     nav ul li a{line-height: 32px;}
     nav ul li .custom_nav { left: 0 !important; transform: translate(0) !important; }
     nav ul li .custom_nav {  width: 100%; min-height: auto;  position: static;}
-    
+
     nav ul li .custom_nav .properties_dropdown section { width: 32%; }
    .properties_dropdown { flex-wrap: wrap; margin: 0;}
-
+   nav ul li:hover::before{ width: 100%;}
+   nav ul li:before{ left: 0;}
 
     #hero{padding: 40px 25px;}
     #hero::before{display: none;}
@@ -114,31 +118,54 @@
 
 @media only screen and (max-width: 800px) {
  .header_content { max-width: 31px; z-index: 5;margin-right: 50px;}
+ header { padding: 40px 10px; }
+ 
+ #nav_area { padding: 0; pointer-events: none; padding: 64px 25px; }
+ nav { position: relative; z-index: 151; pointer-events: auto; }
 
+ nav ul li .custom_nav {  padding: 10px; background: rgba(255, 225, 214, 0.4);margin: 10px 0;}
+ nav ul li a::after {content: ""; width: 0%; height: 0%; background: var(--thirdColor); display: block; position: absolute; top: 50%; transform: translateY(-50%); border-radius: 25px;z-index: -1;}
+ nav ul li a:hover::after{ width: 100%; height: 100%; left: 0;}
+
+ nav ul li a{display: block;margin: 0 auto;line-height: 40px;padding: 3px 12px;text-align: center;}
+ nav ul li q { right: 20px; top: 50%; transform: translateY(-50%); }
+
+ nav ul ul li a::before{display: none;}
+ nav ul li .custom_nav ul li a{padding: 0;text-align: left;margin: 0;max-width: fit-content;}
+
+ nav ul li::before{display: none;}
+
+ nav ul li .custom_nav a::after{display: none;}
+ nav ul li .properties a::before { bottom: 0; }
 
 nav ul li .custom_nav .dropdown_content { flex-direction: column; row-gap: 25px; }
 nav ul li .custom_nav section:nth-child(2) { max-width: 100%; width: 100%; }
 nav ul li .custom_nav .properties_dropdown section { width: 24%; max-width: 100%; }
 
-
 nav ul li .custom_nav section figure img { width: unset; }
 #nav_menu{display: none;}
 #nav_menu.active { position: relative; z-index: 1; display: block; background: var(--white);padding: 40px 15px;border-radius: 9px;}
-nav ul li .custom_nav { padding: 0; }
 nav ul li .custom_nav section { max-width: 100%; width: 100%; }
 .hamburger.active .hamburger_line:nth-child(1) { transform: rotate(45deg); top: 10px; }
 .hamburger.active .hamburger_line:nth-child(2) { opacity: 0;  }
 .hamburger.active .hamburger_line:nth-child(3) { transform: rotate(-45deg); top: 10px; }
 
-nav .hamburger {display: block; right: 20px;}
-#nav_area {  background: transparent;     max-width: 100%;height: 100%;width: 100%;position: absolute;z-index: 2;right: 0;top: 30px;padding: 0;max-width: 100%;}
-header { position: relative; top: unset; z-index: 3;} 
+nav .hamburger {display: block; }
+#nav_area {       background: transparent;height: 100%;width: 100%;position: absolute;right: 0;top: 0;max-width: 100%;z-index: 3;padding: 70px 25px;pointer-events: none;}
+header { position: relative; top: unset; z-index: 3;background: #F1EAE6;} 
+.mobile_btn a { max-width: 100%; margin-top: 25px; }
+.mobile_btn {display: block;}
+nav ul li q.clicked { top: 17px; }
 
 .header_btn { display: none; }
 
-nav ul li .custom_nav.properties a { top: 0; }
+nav ul li .custom_nav.properties a { top: 10px; right: 10px;}
 
 .modal_info input { font-size: 16px; }
+
+.specialist_boxes { flex-wrap: wrap; }
+.specialist_boxes section { width: 49%; max-width: 100%; display: grid; place-items: center; }
+
 }
 
 
@@ -156,7 +183,7 @@ nav ul li .custom_nav.properties a { top: 0; }
     .hero_info h2 span { font-size: 45px; }
     .hero_img { height: auto; overflow: unset; }
     .hero_img figure img { max-width: 100%; }
-
+    .hero_info a { max-width: 100% !important; }
 
     .about_info { text-align: left; }
     .about_info h2 { font-size: 28px; }
@@ -180,7 +207,7 @@ nav ul li .custom_nav.properties a { top: 0; }
     .specialist_heading h2 small { font: 500 50px var(--thirdFont); }
     .specialist_heading h2 { font-size: 35px; }
     .specialist_boxes { flex-wrap: wrap; }
-    .specialist_boxes section { width: 100%; max-width: 100%; }
+    .specialist_boxes section { width: 100%;  max-width: 400px;display: block;padding: 40px 25px;}
     .specialist_btn { flex-direction: column; max-width: 100%;}
     .specialist_btn a{max-width: 100%;}
 
